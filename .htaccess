@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /codeigniter_crud/
+
+    # Si el archivo o directorio existe, no lo reescribas
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Reescribe la URL para redirigir todo a index.php
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
